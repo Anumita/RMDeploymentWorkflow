@@ -1,0 +1,101 @@
+﻿{
+  "manifestVersion": 1,
+  "id": "Deployment-WorkFlow",
+  "version": "0.2.3",
+  "name": "RM Deployment Workflow",
+  "description": "RM summary section extension",
+  "publisher": "shenoyanumita",
+  "public":  false,
+  "links": {
+    "learn": {
+      "uri": "https://github.com/Microsoft/vso-extension-samples"
+    }
+  },
+  "icons": {
+    "default": "images/workflowIcon.jpg"
+  },
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+
+  },
+  "branding": {
+        "color": "#5C2D91",
+        "theme": "dark"
+    },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "deploymentsummaryspace",
+      "type": "ms.vss-releaseManagement-web.release-summary-section",
+      "targets": [ "ms.vss-releaseManagement-web.release-details-summary-tab" ],
+      "properties": {
+        "name": "Deployment Status",
+        "uri": "index.html",
+        "height":  "800px"
+      }
+    }
+  ],
+  "screenshots": [
+    	{
+      		"path": "images/Details.png"
+    	},
+    	{
+      		"path": "images/Changeworkflow.png"
+    	},
+    {
+      "path": "images/info.png"
+    }
+
+    ],	
+  "files": [
+    {
+      "path": "index.html",
+      "addressable": true
+    },
+     {
+       "path": "dist",
+      "addressable": true,
+       "packagePath": "scripts"    
+     },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    },
+      {
+       "path": "node_modules/vss-web-extension-sdk",
+      "addressable": true
+    
+    },
+    {
+        "path": "images/Details.png", "addressable": true
+    },
+    {
+        "path": "images/Changeworkflow.png", "addressable": true
+    },
+    {
+      "path": "images/info.png",
+      "addressable": true
+    },
+    {
+      "path": "images/icon-rm-environment-deploy.png",
+      "addressable": true
+    },
+    {
+      "path": "images/icon-rm-environment-cancel.png",
+      "addressable": true
+    },
+    {
+      "path": "images/icon-rm-environment-redeploy.png",
+      "addressable": true
+    }
+
+  ]
+}
+

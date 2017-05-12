@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Deployment status</title>
+    <script src="lib/VSS.SDK.min.js"></script>
+    <script type="text/javascript">VSS.init({
+    usePlatformScripts: true,
+    moduleLoaderConfig: {
+        paths: { "enhancer": "scripts" }
+    }
+});
+    
+        VSS.require(["enhancer/main"], function (items) {
+            VSS.notifyLoadSucceeded();
+        });
+    </script>   
+    <style>
+             
+        #start {
+
+            background-color: yellow;
+            height: 15px;
+            width: 15px;
+            border-radius: 15px;
+        }
+
+
+
+        .details {
+            display: inline-block;
+            overflow: visible;
+            position:fixed;
+            text-align: justify;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            background: rgb(255,255,255);
+            -webkit-box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3);
+            box-shadow: 1px 3px 1px 0 rgba(0,0,0,0.3);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+            border: 1px solid lightgrey;
+        }
+
+
+        .environment {
+            width: 30px;
+            height: 5px;
+            float: left;
+            padding-left: 0px;
+            padding-top: 10px;
+            color: blue;
+            border: 2px solid black;
+            background-color: #008B8B;
+            margin-right: 2px;
+            text-align: left;
+            
+        }
+
+        .container {
+            margin-bottom: 20px;
+            display: inline-block;
+            border: 2px solid white;
+          
+        }
+        .container span{
+        position: absolute;
+        bottom: 0;
+        left:0;
+        top:100%;
+        white-space:nowrap;
+        }
+
+            .container:hover {
+                border-color: #59b2c2;
+                background-color: #59b2c2;
+            }
+
+        .preApproval {
+            width: 15px;
+            height: 15px;
+            float: left;
+            border-top-left-radius: 5px 5px;
+            border-bottom-left-radius: 5px 5px;
+            margin-right: 2px;
+        }
+
+        .postApproval {
+            width: 15px;
+            height: 15px;
+            float: left;
+            -webkit-border-top-right-radius: 5px 5px;
+            -webkit-border-bottom-right-radius: 5px 5px;
+            margin-right: 0px;
+        }
+
+        .succeeded {
+            background-color: green;
+        }
+
+        .failed {
+            background-color: red;
+        }
+
+        .pending {
+            background-color: grey;
+        }
+
+        .running {
+            background-color: #1874CD;
+        }
+
+        .scheduled {
+            background-color: black;
+        }
+
+        .notStarted {
+            background-color: grey;
+        }
+
+        .environments {
+            overflow:visible;
+        }
+      .deployment-workflow-section {
+          position: relative;
+          z-index: 0;
+
+        }
+
+            .deployment-workflow-section canvas {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                }
+
+        #connectionCanvas {
+            display: block;
+            clear: both;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="deployment-workflow-section">
+    </div>
+</body>
+</html>
